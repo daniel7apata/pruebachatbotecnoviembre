@@ -41,7 +41,7 @@ else:
 		st.write(f"Fetching page {page}: {url}")
 		soup = fetch_page(url)
 		titles = extract_titles(soup)
-		st.write(titles)
+		#st.write(titles)
 
 		indicacion = " finaliza tu respuesta diciendo 'segun Sammy'"
 		
