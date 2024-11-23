@@ -43,7 +43,7 @@ else:
     if prompt := st.chat_input("What is up?"):
 
         # Store and display the current prompt.
-        st.session_state.messages.append({"role": "user", "content": classification_prompt+prompt})
+        st.session_state.messages.append({"role": "user", "content": prompt})
         with st.chat_message("user"):
             st.markdown(prompt)
 
@@ -51,7 +51,7 @@ else:
         stream = client.chat.completions.create(
             model="ft:gpt-4o-mini-2024-07-18:personal:sammyv8:A2ospTCd",
             messages=[
-                {"role": m["role"], "content": m["content"]}
+                {"role": m["role"], "content": classification_prompt+m["content"]}
                 for m in st.session_state.messages
             ],
             stream=True,
