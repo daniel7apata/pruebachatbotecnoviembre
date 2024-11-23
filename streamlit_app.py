@@ -23,7 +23,7 @@ else:
 	def extract_titles(soup):
 		
 		if soup:
-			product_titles = soup.find_all()
+			product_titles = soup.find_all('p')
 			titles = ""
 			for title in product_titles:
 				titles += title.get_text(strip=True) + "      "
