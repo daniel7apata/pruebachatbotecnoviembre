@@ -88,7 +88,8 @@ else:
 				# Generate a response using the OpenAI API.
 				
 				stream = client.chat.completions.create(
-					model="ft:gpt-4o-mini-2024-07-18:personal:sammyv8:A2ospTCd",
+					#model="ft:gpt-4o-mini-2024-07-18:personal:sammyv8:A2ospTCd"
+					model="gpt-4o",
 					messages=[
 						{"role": m["role"], "content": classification_prompt + m["content"] + titles}
 						for m in st.session_state.messages
