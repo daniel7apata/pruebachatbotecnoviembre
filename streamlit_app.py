@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 st.title("Web Scrapping+Chatbot")
 
 base_url = st.text_input("Link")
+titles = ""
 
 if not base_url:
 	st.write("Ingrese link")
@@ -20,7 +21,7 @@ else:
 			return None
 	
 	def extract_titles(soup):
-		titles = ""
+		
 		if soup:
 			product_titles = soup.find_all()
 			for title in product_titles:
